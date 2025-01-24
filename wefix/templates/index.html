@@ -1,0 +1,462 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceuil - weFixit 2.0 Kisangani</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="gray-100">
+
+    <!-- Top bar -->
+    <div class="bg-[#4A5568] text-white py-2">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <a href="mailto:Contact@Wefixit.Cd" class="flex items-center space-x-2 text-sm hover:text-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <span>Contact@Wefixit.Cd</span>
+                </a>
+                <a href="tel:(+243) 824 730 727" class="flex items-center space-x-2 text-sm hover:text-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>(+243) 824 730 727</span>
+                </a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="#" class="hover:text-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                </a>
+                <a href="#" class="hover:text-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Principale -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-2">
+                        <img src="{% static 'images/logo.svg' %}" alt="weFixit 2.0" class="h-16 w-auto">
+                    </a>
+                </div>
+
+                <!-- PC Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-800 hover:text-[#86E65A] font-medium">ACCUEIL</a>
+                    <a href="#" class="text-gray-800 hover:text-[#86E65A] font-medium">NOTRE ENTREPRISE</a>
+                    <a href="#" class="text-gray-800 hover:text-[#86E65A] font-medium">NOS SERVICES</a>
+                    <a href="#" class="text-gray-800 hover:text-[#86E65A] font-medium">BLOG</a>
+                    <a href="#" class="text-gray-800 hover:text-[#86E65A] font-medium">PROJECT</a>
+                    <a href="#" class="text-gray-800 hover:text-[#86E65A] font-medium">CONTACT</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button class="md:hidden p-2 rounded-md text-gray-800 hover:text-[#86E65A]" onclick="toggleMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">ACCUEIL</a>
+                    <a href="#" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">NOTRE ENTREPRISE</a>
+                    <a href="#" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">NOS SERVICES</a>
+                    <a href="#" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">BLOG</a>
+                    <a href="#" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">PROJECT</a>
+                    <a href="#" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">CONTACT</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="relative bg-gradient-to-r from-gray-800 to-gray-600 text-white py-24">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="container mx-auto px-4 relative">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="text-[#86E65A]">Solutions Fiables</span> en Energis Solaire
+                <br>
+                et Maintenance Technique à Kisangani
+            </h1>
+            <div class="flex flex-wrap gap-4">
+                <a href="#" class="bg-[#86E65A] text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-[#6BC344] transition-colors">
+                    OBTENEZ UN DEVIS
+                </a>
+                <a href="#" class="border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-gray-900 transition-colors">
+                    NOS SERVICES
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- À propos de nous Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <!-- Image Column -->
+                <div class="relative">
+                    <img 
+                        src="{% static 'images/team.webp' %}" 
+                        alt="Équipe WeFixit" 
+                        class="w-full h-auto rounded-lg shadow-lg"
+                    />
+                </div>
+                
+                <!-- Content Column -->
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <h2 class="text-lg text-gray-600">À propos de nous</h2>
+                        <h3 class="text-4xl font-bold text-gray-900">Qui Sommes-Nous ?</h3>
+                    </div>
+                    
+                    <p class="text-gray-600 leading-relaxed">
+                        Fondée en 2012, weFixit 2.0 est une entreprise innovante et dynamique spécialisée dans les solutions technologiques et énergétiques. Basée à Kisangani, nous offrons une gamme complète de services, allant de l'installation de systèmes solaires photovoltaïques à la maintenance informatique, en passant par la sécurité électronique, la création de sites web, la vente des équipements, l'électricité, la microsoudure.
+                    </p>
+                    
+                    <div>
+                        <a href="#" class="inline-block px-6 py-3 bg-[#86E65A] text-gray-900 rounded-full font-medium hover:bg-[#6BC344] transition-colors">
+                            EN SAVOIRS PLUS
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Avantages Section -->
+    <section class="py-16 bg-[#0A0B2E] text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Expertise Local -->
+                <div class="flex flex-col items-center text-center p-6 rounded-lg bg-[#0A0B2E] border border-gray-700 hover:border-[#86E65A] transition-colors">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center bg-[#86E65A] rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0A0B2E]"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 3 5 5-5 5"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Expertise Local</h3>
+                    <p class="text-gray-400">Une connaissance approfondie du marché local et des besoins spécifiques de notre région.</p>
+                </div>
+
+                <!-- Service Client Réactif -->
+                <div class="flex flex-col items-center text-center p-6 rounded-lg bg-[#0A0B2E] border border-gray-700 hover:border-[#86E65A] transition-colors">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center bg-[#86E65A] rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0A0B2E]"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Service Client Réactif</h3>
+                    <p class="text-gray-400">Une équipe disponible et réactive pour répondre rapidement à vos besoins.</p>
+                </div>
+
+                <!-- Solutions Personnalisées -->
+                <div class="flex flex-col items-center text-center p-6 rounded-lg bg-[#0A0B2E] border border-gray-700 hover:border-[#86E65A] transition-colors">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center bg-[#86E65A] rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0A0B2E]"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Solutions Personnalisées</h3>
+                    <p class="text-gray-400">Des solutions adaptées à vos besoins spécifiques et à votre budget.</p>
+                </div>
+
+                <!-- Equipe Qualifié -->
+                <div class="flex flex-col items-center text-center p-6 rounded-lg bg-[#0A0B2E] border border-gray-700 hover:border-[#86E65A] transition-colors">
+                    <div class="w-16 h-16 mb-4 flex items-center justify-center bg-[#86E65A] rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0A0B2E]"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Équipe Qualifiée</h3>
+                    <p class="text-gray-400">Des experts formés et certifiés pour garantir des services de qualité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Services Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900">Nos <span class="text-green-300">Solutions</span></h2>
+                <div class="w-24 h-1 bg-[#86E65A] mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Installation Solaire Photovoltaique -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+                    <div class="w-12 h-12 bg-[#86E65A] rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0A0B2E]"><path d="M4 2v2"/><path d="M10 4V2"/><path d="M14 2v2"/><path d="M20 2v2"/><path d="M4 22v-2"/><path d="M10 22v-2"/><path d="M14 22v-2"/><path d="M20 22v-2"/><path d="M2 4h20"/><path d="M2 20h20"/><path d="M2 12h20"/><path d="M2 9h20"/><path d="M2 15h20"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Installation Solaire Photovoltaïque</h3>
+                    <p class="text-gray-600 mb-4">Solutions d'énergie solaire personnalisées pour répondre à vos besoins énergétiques.</p>
+                    <ul class="space-y-2 text-gray-600 mb-4">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-[#86E65A] rounded-full mr-2"></span>
+                            Études et dimensionnement personnalisés
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-[#86E65A] rounded-full mr-2"></span>
+                            Installation professionnelle
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-[#86E65A] rounded-full mr-2"></span>
+                            Maintenance et suivi
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Maintenance Informatique -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+                    <div class="w-12 h-12 bg-[#86E65A] rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0A0B2E]"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="M22 7h-2"/><path d="M7 20h10"/><path d="M12 4v16"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Maintenance Informatique</h3>
+                    <p class="text-gray-600 mb-4">Services complets de maintenance pour vos systèmes informatiques.</p>
+                    <ul class="space-y-2 text-gray-600 mb-4">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-[#86E65A] rounded-full mr-2"></span>
+                            Maintenance préventive et corrective
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-[#86E65A] rounded-full mr-2"></span>
+                            Support logiciel et matériel
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-[#86E65A] rounded-full mr-2"></span>
+                            Optimisation des performances
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sécurite Électronique -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+                    <div class="w-12 h-12 bg-[#86E65A] rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0A0B2E]"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Sécurité Électronique</h3>
+                    <p class="text-gray-600 mb-4">Solutions de sécurité avancées pour protéger vos biens.</p>
+                    <ul class="space-y-2 text-gray-600 mb-4">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-[#86E65A] rounded-full mr-2"></span>
+                            Systèmes anti-intrusion
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-[#86E65A] rounded-full mr-2"></span>
+                            Vidéosurveillance HD
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-[#86E65A] rounded-full mr-2"></span>
+                            Contrôle d'accès
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Maintenance Anti-Incendie -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+                    <div class="w-12 h-12 bg-[#86E65A] rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0A0B2E]"><path d="M15 12h.01"/><path d="M12 12h.01"/><path d="M9 12h.01"/><path d="M6 19v2"/><path d="M18 19v2"/><path d="M3 3v2"/><path d="M21 3v2"/><path d="M12 3v3"/><path d="M12 18v3"/><path d="M3 15h18"/><path d="M3 9h18"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Maintenance Anti-Incendie</h3>
+                    <p class="text-gray-600 mb-4">Entretien et maintenance des équipements de sécurité incendie.</p>
+                    <ul class="space-y-2 text-gray-600 mb-4">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-[#86E65A] rounded-full mr-2"></span>
+                            Extincteurs (poudre, CO2)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-[#86E65A] rounded-full mr-2"></span>
+                            Systèmes de détection
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-[#86E65A] rounded-full mr-2"></span>
+                            Maintenance préventive
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Réseau Informatique -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+                    <div class="w-12 h-12 bg-[#86E65A] rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#0A0B2E]"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Réseau Informatique</h3>
+                    <p class="text-gray-600 mb-4">Solutions réseau complètes pour votre entreprise.</p>
+                    <ul class="space-y-2 text-gray-600 mb-4">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-[#86E65A] rounded-full mr-2"></span>
+                            Installation et configuration
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-[#86E65A] rounded-full mr-2"></span>
+                            Sécurisation des réseaux
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-[#86E65A] rounded-full mr-2"></span>
+                            Maintenance proactive
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets -->
+<section class="bg-gray-100 py-12">
+    <div class="container mx-auto px-4">
+        <!-- Titre -->
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">Nos Réalisations</h2>
+
+        <!-- Galerie -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Projet 1 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="{% static 'images/projet1.webp' %}" alt="Projet 1" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-700">Titre du Projet 1</h3>
+                    <p class="text-sm text-gray-600 mt-2">Objectifs : Description rapide des objectifs du projet.</p>
+                    <p class="text-sm text-gray-600 mt-1">Défis : Défis majeurs rencontrés lors du projet.</p>
+                    <p class="text-sm text-gray-600 mt-1">Solutions : Solutions apportées pour surmonter les défis.</p>
+                </div>
+            </div>
+
+            <!-- Projet 2 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="{% static 'images/team.webp' %}" alt="Projet 2" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-700">Titre du Projet 2</h3>
+                    <p class="text-sm text-gray-600 mt-2">Objectifs : Description rapide des objectifs du projet.</p>
+                    <p class="text-sm text-gray-600 mt-1">Défis : Défis majeurs rencontrés lors du projet.</p>
+                    <p class="text-sm text-gray-600 mt-1">Solutions : Solutions apportées pour surmonter les défis.</p>
+                </div>
+            </div>
+
+            <!-- Projet 3 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="{% static 'images/projet3.jpg' %}" alt="Projet 3" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-700">Titre du Projet 3</h3>
+                    <p class="text-sm text-gray-600 mt-2">Objectifs : Description rapide des objectifs du projet.</p>
+                    <p class="text-sm text-gray-600 mt-1">Défis : Défis majeurs rencontrés lors du projet.</p>
+                    <p class="text-sm text-gray-600 mt-1">Solutions : Solutions apportées pour surmonter les défis.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Témoignages des clients -->
+        <div class="mt-12 bg-white rounded-lg shadow-lg p-6">
+            <!-- Titre -->
+            <h3 class="text-2xl font-bold text-gray-700 mb-4 text-center">Témoignages de nos clients</h3>
+        
+            <!-- Étoiles -->
+            <div class="flex justify-center items-center mb-4">
+                <svg class="w-6 h-6 text-yellow-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.757 1.525 8.237L12 18.897l-7.461 4.403 1.525-8.237L0 9.306l8.332-1.151L12 .587z" />
+                </svg>
+                <svg class="w-6 h-6 text-yellow-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.757 1.525 8.237L12 18.897l-7.461 4.403 1.525-8.237L0 9.306l8.332-1.151L12 .587z" />
+                </svg>
+                <svg class="w-6 h-6 text-yellow-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.757 1.525 8.237L12 18.897l-7.461 4.403 1.525-8.237L0 9.306l8.332-1.151L12 .587z" />
+                </svg>
+                <svg class="w-6 h-6 text-yellow-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.757 1.525 8.237L12 18.897l-7.461 4.403 1.525-8.237L0 9.306l8.332-1.151L12 .587z" />
+                </svg>
+                <svg class="w-6 h-6 text-yellow-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.757 1.525 8.237L12 18.897l-7.461 4.403 1.525-8.237L0 9.306l8.332-1.151L12 .587z" />
+                </svg>
+            </div>
+        
+            <!-- Témoignage -->
+            <blockquote class="italic text-gray-600 border-l-4 border-green-500 pl-4">
+                "Nous sommes extrêmement satisfaits du travail réalisé par l'équipe de WeFixIt 2.0 Kisangani. Leur professionnalisme et leurs solutions innovantes ont dépassé nos attentes."
+                <span class="block font-semibold text-gray-800 mt-2 text-right">- Client satisfait</span>
+            </blockquote>
+
+        </div>
+        
+        
+    </div>
+</section>
+
+<div class="flex justify-between items-center p-8">
+    <div class="w-56">
+      <img
+        src="{% static 'images/team.webp' %}"
+        alt="Worker on solar panels"
+        class="rounded-lg shadow-lg"
+      />
+    </div>
+    <div class="w-1/2 pl-8">
+      <h2 class="text-2xl font-semibold mb-4">Contactez-nous</h2>
+      <p class="text-lg text-gray-700 mb-6">Faisons quelque chose de grand ensemble</p>
+      <button class="bg-lime-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-lime-600">
+        Obtenez un devis
+      </button>
+    </div>
+  </div>
+
+  <footer class="bg-white">
+    <div class="container mx-auto py-8 px-4 flex flex-wrap">
+      <!-- Section 1 : Logo et Mentions légales -->
+      <div class="w-full md:w-1/3 mb-4">
+        <img src="{% static 'images/logo1.svg' %}" alt="Logo" class="w-24 mb-4">
+        <ul class="text-sm text-pink-600 space-y-2">
+          <li><a href="#">Mention Légales</a></li>
+          <li><a href="#">Politique de Confidentialité</a></li>
+          <li><a href="#">Expédition et Livraison</a></li>
+          <li><a href="#">Conditions Générales</a></li>
+          <li><a href="#">Droit de Rétractation</a></li>
+        </ul>
+      </div>
+      <!-- Section 2 : Accès rapide -->
+      <div class="w-full md:w-1/3 mb-4">
+        <h3 class="font-semibold mb-4">Accès Rapide</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:underline">Accueil</a></li>
+          <li><a href="#" class="hover:underline">Notre Entreprise</a></li>
+          <li>
+            <a href="#" class="hover:underline">Nos Services</a>
+          </li>
+          <li><a href="#" class="hover:underline">Blog</a></li>
+          <li><a href="#" class="hover:underline">Project</a></li>
+          <li><a href="#" class="hover:underline">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Section 3 : Suivez-nous -->
+      <div class="w-full md:w-1/3 mb-4">
+        <h3 class="font-semibold mb-4">Suivez-Nous</h3>
+        <div class="flex space-x-4">
+          <a href="#" class="bg-lime-500 p-4 rounded-full text-white">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="bg-lime-500 p-4 rounded-full text-white">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="bg-lime-500 p-4 rounded-full text-white">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright -->
+    <div class="bg-gray-900 text-center text-gray-400 py-4">
+      Copyright © 2025 WeFixit 2.0 Kisangani All Rights Reserved Powered By HiddenLab
+    </div>
+  </footer>
+  
+  
+
+   
+    
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
