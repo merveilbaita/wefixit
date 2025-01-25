@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weFix 2.0 - Notre Entreprise</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Top bar -->
+    <div class="bg-[#4A5568] text-white py-2">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <a href="mailto:Contact@Wefixit.Cd" class="flex items-center space-x-2 text-sm hover:text-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <span>Contact@Wefixit.Cd</span>
+                </a>
+                <a href="tel:(+243) 824 730 727" class="flex items-center space-x-2 text-sm hover:text-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>(+243) 824 730 727</span>
+                </a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="#" class="hover:text-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                </a>
+                <a href="#" class="hover:text-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="/" class="flex items-center">
+                    <img src="{% static 'images/logo.svg' %}" alt="weFixit 2.0" class="h-16 w-auto">
+                </a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="{% url 'index' %}" class="text-gray-800 hover:text-[#86E65A] font-medium">ACCUEIL</a>
+                    <a href="{ url 'propos' }" class="text-[#86E65A] font-medium">NOTRE ENTREPRISE</a>
+                    <a href="#" class="text-gray-800 hover:text-[#86E65A] font-medium">NOS SERVICES</a>
+                    <a href="#" class="text-gray-800 hover:text-[#86E65A] font-medium">BLOG</a>
+                    <a href="#" class="text-gray-800 hover:text-[#86E65A] font-medium">PROJECT</a>
+                    <a href="{% url 'contact' %}" class="text-gray-800 hover:text-[#86E65A] font-medium">CONTACT</a>
+                </nav>
+                <button class="md:hidden" onclick="toggleMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </div>
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="block py-2 text-gray-800 hover:text-[#86E65A]">ACCUEIL</a>
+                <a href="about.html" class="block py-2 text-[#86E65A]">NOTRE ENTREPRISE</a>
+                <a href="#" class="block py-2 text-gray-800 hover:text-[#86E65A]">NOS SERVICES</a>
+                <a href="#" class="block py-2 text-gray-800 hover:text-[#86E65A]">BLOG</a>
+                <a href="#" class="block py-2 text-gray-800 hover:text-[#86E65A]">PROJECT</a>
+                <a href="contact.html" class="block py-2 text-gray-800 hover:text-[#86E65A]">CONTACT</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="relative bg-gradient-to-r from-gray-800 to-gray-600 text-white py-24">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="container mx-auto px-4 relative">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Notre Histoire</h1>
+            <p class="text-xl max-w-3xl">Découvrez l'histoire de WEFIXIT 2.0, une entreprise engagée dans l'innovation énergétique et le développement durable à Kisangani.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-16">
+        <div class="container mx-auto px-4">
+            <!-- Présentation de l'entreprise -->
+            <section class="mb-16">
+                <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+                    <h2 class="text-3xl font-bold mb-6">Qui sommes-nous ?</h2>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-8">
+                        WEFIXIT 2.0 est une entreprise spécialisée dans l'installation de systèmes solaires photovoltaïques et la maintenance technique à Kisangani. Fondée par Jacques-Trésor Atilombe Boyelomo, notre mission est de fournir des solutions énergétiques fiables et des services techniques de qualité pour améliorer la vie de nos clients.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <img src="{% static 'images/trez.jpg' %}" alt="Notre équipe" class="rounded-lg shadow-md">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">Notre Équipe Dirigeante</h3>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h4 class="text-xl font-semibold mb-2">Jacques-Trésor Atilombe Boyelomo</h4>
+                                <p class="text-gray-600 mb-4">Administrateur Gérant</p>
+                                <p class="text-gray-700">Expert en énergie solaire et maintenance technique, avec plus de 10 ans d'expérience dans le domaine.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nos Valeurs -->
+            <section>
+                <h2 class="text-3xl font-bold mb-8 text-center">Nos Valeurs</h2>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <!-- Fiabilité -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <div class="w-16 h-16 bg-[#86E65A] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Fiabilité</h3>
+                        <p class="text-gray-600">Nous nous engageons à fournir des services et des solutions de haute qualité sur lesquels nos clients peuvent compter.</p>
+                    </div>
+
+                    <!-- Innovation -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <div class="w-16 h-16 bg-[#86E65A] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M12 2v5"/><path d="M6.5 4.5l2.5 2.5"/><path d="M2 12h5"/><path d="M4.5 17.5l2.5-2.5"/><path d="M12 22v-5"/><path d="M17.5 19.5l-2.5-2.5"/><path d="M22 12h-5"/><path d="M19.5 6.5l-2.5 2.5"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Innovation</h3>
+                        <p class="text-gray-600">Nous restons à la pointe de la technologie pour offrir les meilleures solutions à nos clients.</p>
+                    </div>
+
+                    <!-- Service client -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <div class="w-16 h-16 bg-[#86E65A] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Service Client</h3>
+                        <p class="text-gray-600">La satisfaction de nos clients est notre priorité absolue.</p>
+                    </div>
+
+                    <!-- Développement durable -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <div class="w-16 h-16 bg-[#86E65A] rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Développement Durable</h3>
+                        <p class="text-gray-600">Nous contribuons à un avenir plus vert grâce à nos solutions énergétiques durables.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-16">
+        <div class="container mx-auto py-8 px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <img src="{% static 'images/logo1.svg' %}" alt="Logo" class="h-12 mb-4">
+                    <p class="text-gray-600">Solutions fiables en énergie solaire et maintenance technique à Kisangani.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Liens Rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-600 hover:text-[#86E65A]">Accueil</a></li>
+                        <li><a href="about.html" class="text-gray-600 hover:text-[#86E65A]">Notre Entreprise</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-[#86E65A]">Nos Services</a></li>
+                        <li><a href="contact.html" class="text-gray-600 hover:text-[#86E65A]">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>n°2 av Général Mulamba C/Makiso, Kisangani</li>
+                        <li>(+243) 824 730 727</li>
+                        <li>Contact@Wefixit.Cd</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-900 text-center text-gray-400 py-4">
+            <p>Copyright © 2025 WeFixit 2.0 Kisangani. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+
+    
+</body>
+</html>
