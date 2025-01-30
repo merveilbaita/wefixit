@@ -70,3 +70,7 @@ def devis(request):
 
 def devis_success(request):
     return render(request, 'devis.html')
+
+
+def services(request):
+    return render(request, 'services.html')
