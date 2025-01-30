@@ -1,0 +1,420 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weFix 2.0 - Devis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Top bar -->
+    <div class="bg-[#4A5568] text-white py-2">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <a href="mailto:Contact@Wefixit.Cd" class="flex items-center space-x-2 text-sm hover:text-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <span>Contact@Wefixit.Cd</span>
+                </a>
+                <a href="tel:(+243) 824 730 727" class="flex items-center space-x-2 text-sm hover:text-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>(+243) 824 730 727</span>
+                </a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="#" class="hover:text-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                </a>
+                <a href="#" class="hover:text-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-2">
+                        <img src="{% static 'images/logo.svg' %}" alt="weFixit 2.0" class="h-16 w-auto">
+                    </a>
+                </div>
+
+                <!-- PC Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="{% url 'index' %}" class="text-gray-800 hover:text-[#86E65A] font-medium">ACCUEIL</a>
+                    <a href="{% url 'propos'%}" class="text-gray-800 hover:text-[#86E65A] font-medium">NOTRE ENTREPRISE</a>
+                    <a href="#" class="text-gray-800 hover:text-[#86E65A] font-medium">NOS SERVICES</a>
+                    <a href="{% url 'blog' %}" class="text-gray-800 hover:text-[#86E65A] font-medium">BLOG</a>
+                    <a href="{% url 'contact' %}" class="text-gray-800 hover:text-[#86E65A] font-medium">CONTACT</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button class="md:hidden p-2 rounded-md text-gray-800 hover:text-[#86E65A]" onclick="toggleMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="{% url 'index' %}" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">ACCUEIL</a>
+                    <a href="#" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">NOTRE ENTREPRISE</a>
+                    <a href="#" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">NOS SERVICES</a>
+                    <a href="{% url 'blog' %}" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">BLOG</a>
+                    <a href="{% url 'contact' %}" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">CONTACT</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-6 md:p-8 mt-12">
+        <form id="serviceForm" method="POST" class="space-y-6">
+            {% csrf_token %}
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Demande de Devis</h2>
+
+            <div class="relative">
+                <label for="service" class="block text-sm font-medium text-gray-700 mb-2">
+                    Sélectionnez un service
+                </label>
+                <select name="service" id="service" class="block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all" onchange="updateForm()">
+                    <option value="" disabled selected>Choisissez un service</option>
+                    <option value="solaire">Énergie Solaire</option>
+                    <option value="reparation">Réparation / Maintenance</option>
+                    <option value="antiIncendie">Équipements Anti-Incendie</option>
+                    <option value="securiteElectronique">Sécurité Électronique</option>
+                    <option value="jeuxVideo">Consoles de Jeux</option>
+                    <option value="electricite">Électricité</option>
+                    <option value="evaluationEnvironnementale">Évaluation Environnementale</option>
+                </select>
+            </div>
+
+            <div id="dynamicFields" class="space-y-4"></div>
+
+            <button type="submit" class="w-full bg-[#86E65A] text-gray-900 px-6 py-3 rounded-md font-medium hover:bg-[#6BC344] transition-colors">
+                Envoyer la Demande
+            </button>
+        </form>
+    </div>
+
+    <script>
+        function updateForm() {
+            const selectedService = document.getElementById("service").value;
+            const dynamicFields = document.getElementById("dynamicFields");
+            dynamicFields.innerHTML = "";
+
+            const templates = {
+                solaire: `
+                    <div class="fade-in space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Service Solaire</h3>
+                        
+                        <div>
+                            <label for="typeBatiment" class="block text-sm font-medium text-gray-700 mb-2">Type de bâtiment</label>
+                            <select name="typeBatiment" id="typeBatiment" class="block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="maison">Maison</option>
+                                <option value="bureau">Bureau</option>
+                                <option value="ecole">École</option>
+                                <option value="magasin">Magasin</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="nombrePieces" class="block text-sm font-medium text-gray-700 mb-2">Nombre de pièces à équiper</label>
+                            <input type="number" name="nombrePieces" id="nombrePieces" placeholder="Exemple : 3" 
+                                class="block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-medium text-gray-800 mb-3">Liste des appareils électriques</h4>
+                            <div id="appareilsList" class="space-y-4"></div>
+                            <button type="button" onclick="addAppareil()" 
+                                class="mt-4 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors">
+                                + Ajouter un appareil
+                            </button>
+                        </div>
+                    </div>
+                `,
+                reparation: `
+                    <div class="fade-in space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Réparation / Maintenance</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="modeleMachine" class="block text-sm font-medium text-gray-700 mb-2">Modèle de la machine</label>
+                                <input type="text" name="modeleMachine" id="modeleMachine" placeholder="Exemple : Dell Latitude 5400" 
+                                    class="block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                            </div>
+                            <div>
+                                <label for="fabricant" class="block text-sm font-medium text-gray-700 mb-2">Fabricant</label>
+                                <input type="text" name="fabricant" id="fabricant" placeholder="Exemple : Dell" 
+                                    class="block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="diagnosticClient" class="block text-sm font-medium text-gray-700 mb-2">Auto-diagnostic du client</label>
+                            <textarea name="diagnosticClient" id="diagnosticClient" placeholder="Décrivez le problème constaté" 
+                                class="block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 h-32"></textarea>
+                        </div>
+                    </div>
+                `,
+                antiIncendie: `
+                    <div class="fade-in space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Équipements Anti-Incendie</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="typeEtablissement" class="block text-sm font-medium text-gray-700 mb-2">Type d'établissement</label>
+                                <select name="typeEtablissement" id="typeEtablissement" class="block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="commercial">Commercial</option>
+                                    <option value="industriel">Industriel</option>
+                                    <option value="residentiel">Résidentiel</option>
+                                    <option value="educatif">Éducatif</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="superficie" class="block text-sm font-medium text-gray-700 mb-2">Superficie approximative (m²)</label>
+                                <input type="number" name="superficie" id="superficie" placeholder="Ex: 200" 
+                                    class="block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Types d'équipements souhaités</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="equipements[]" value="extincteurs" class="rounded border-gray-300">
+                                    <span>Extincteurs</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="equipements[]" value="detecteurs" class="rounded border-gray-300">
+                                    <span>Détecteurs de fumée</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="equipements[]" value="alarmes" class="rounded border-gray-300">
+                                    <span>Systèmes d'alarme incendie</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="equipements[]" value="sprinklers" class="rounded border-gray-300">
+                                    <span>Systèmes de sprinklers</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                securiteElectronique: `
+                    <div class="fade-in space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Sécurité Électronique</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="typeSite" class="block text-sm font-medium text-gray-700 mb-2">Type de site</label>
+                                <select name="typeSite" id="typeSite" class="block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="residence">Résidence privée</option>
+                                    <option value="bureau">Bureau</option>
+                                    <option value="commerce">Commerce</option>
+                                    <option value="entrepot">Entrepôt</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="nombrePoints" class="block text-sm font-medium text-gray-700 mb-2">Nombre de points d'accès</label>
+                                <input type="number" name="nombrePoints" id="nombrePoints" placeholder="Ex: 3" 
+                                    class="block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Services souhaités</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="services[]" value="videosurveillance" class="rounded border-gray-300">
+                                    <span>Vidéosurveillance</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="services[]" value="controleAcces" class="rounded border-gray-300">
+                                    <span>Contrôle d'accès</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="services[]" value="alarme" class="rounded border-gray-300">
+                                    <span>Système d'alarme</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="services[]" value="interphone" class="rounded border-gray-300">
+                                    <span>Interphone/Vidéophone</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                jeuxVideo: `
+                    <div class="fade-in space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-800">Réparation Console de Jeux</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="typeConsole" class="block text-sm font-medium text-gray-700 mb-2">Type de console</label>
+                                <select name="typeConsole" id="typeConsole" class="block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="ps4">PlayStation 4</option>
+                                    <option value="ps5">PlayStation 5</option>
+                                    <option value="xbox-one">Xbox One</option>
+                                    <option value="xbox-series">Xbox Series X/S</option>
+                                    <option value="switch">Nintendo Switch</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="modeleConsole" class="block text-sm font-medium text-gray-700 mb-2">Modèle spécifique</label>
+                                <input type="text" name="modeleConsole" id="modeleConsole" placeholder="Ex: PS4 Pro, Xbox Series X" 
+                                    class="block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="problemeConsole" class="block text-sm font-medium text-gray-700 mb-2">Description du problème</label>
+                            <textarea name="problemeConsole" id="problemeConsole" 
+                                placeholder="Décrivez le problème que vous rencontrez avec votre console" 
+                                class="block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 h-32"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Symptômes observés</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="symptomes[]" value="allumage" class="rounded border-gray-300">
+                                    <span>Problème d'allumage</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="symptomes[]" value="surchauffe" class="rounded border-gray-300">
+                                    <span>Surchauffe</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="symptomes[]" value="bruit" class="rounded border-gray-300">
+                                    <span>Bruits anormaux</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="symptomes[]" value="affichage" class="rounded border-gray-300">
+                                    <span>Problème d'affichage</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="symptomes[]" value="manette" class="rounded border-gray-300">
+                                    <span>Problème de manette</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="accessoires" class="block text-sm font-medium text-gray-700 mb-2">Accessoires inclus</label>
+                            <input type="text" name="accessoires" id="accessoires" 
+                                placeholder="Ex: manette, câbles, etc." 
+                                class="block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                        </div>
+                    </div>
+                `,
+            };
+
+            if (templates[selectedService]) {
+                dynamicFields.innerHTML = templates[selectedService];
+                if (selectedService === 'solaire') {
+                    addAppareil();
+                }
+            }
+        }
+
+        function addAppareil() {
+            const appareilsList = document.getElementById("appareilsList");
+            const newAppareil = document.createElement("div");
+            newAppareil.className = "appareil bg-gray-50 p-4 rounded-lg space-y-3 fade-in";
+            
+            const index = appareilsList.children.length + 1;
+            newAppareil.innerHTML = `
+                <div class="flex justify-between items-center">
+                    <label class="font-medium text-gray-700">Appareil ${index}</label>
+                    ${index > 1 ? `<button type="button" onclick="this.parentElement.parentElement.remove()" 
+                        class="text-red-600 hover:text-red-700">Supprimer</button>` : ''}
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <input type="text" name="appareil_nom[]" class="appareil-nom block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                        placeholder="Nom de l'appareil" required />
+                    <input type="number" name="appareil_puissance[]" class="appareil-puissance block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                        placeholder="Puissance (W)" required />
+                    <input type="number" name="appareil_duree[]" class="appareil-duree block w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                        placeholder="Durée (h/jour)" required />
+                </div>
+            `;
+            appareilsList.appendChild(newAppareil);
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            // Validation basique
+            const service = formData.get('service');
+            if (!service) {
+                alert('Veuillez sélectionner un service');
+                return;
+            }
+
+            // Validation spécifique selon le service
+            if (service === 'solaire') {
+                const typeBatiment = formData.get('typeBatiment');
+                const nombrePieces = formData.get('nombrePieces');
+                
+                if (!typeBatiment || !nombrePieces) {
+                    alert('Veuillez remplir tous les champs pour le service solaire');
+                    return;
+                }
+
+                const appareils = document.querySelectorAll('.appareil');
+                if (appareils.length === 0) {
+                    alert('Veuillez ajouter au moins un appareil');
+                    return;
+                }
+            } else if (service === 'reparation') {
+                const modeleMachine = formData.get('modeleMachine');
+                const fabricant = formData.get('fabricant');
+                const diagnosticClient = formData.get('diagnosticClient');
+                
+                if (!modeleMachine || !fabricant || !diagnosticClient) {
+                    alert('Veuillez remplir tous les champs pour la réparation');
+                    return;
+                }
+            }
+
+            // Envoi du formulaire
+            form.submit();
+        }
+
+        // Initialisation du formulaire
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceSelect = document.getElementById('service');
+            if (serviceSelect) {
+                serviceSelect.addEventListener('change', updateForm);
+            }
+        });
+    </script>
+
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</body>
+</html>

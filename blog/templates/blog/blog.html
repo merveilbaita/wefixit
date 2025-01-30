@@ -53,7 +53,6 @@
                 <a href="{% url 'propos'%}" class="text-gray-800 hover:text-[#86E65A] font-medium">NOTRE ENTREPRISE</a>
                 <a href="#" class="text-gray-800 hover:text-[#86E65A] font-medium">NOS SERVICES</a>
                 <a href="#" class="text-gray-800 hover:text-[#86E65A] font-medium">BLOG</a>
-                <a href="#" class="text-gray-800 hover:text-[#86E65A] font-medium">PROJECT</a>
                 <a href="{% url 'contact' %}" class="text-gray-800 hover:text-[#86E65A] font-medium">CONTACT</a>
             </nav>
 
@@ -70,12 +69,52 @@
                 <a href="#" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">NOTRE ENTREPRISE</a>
                 <a href="#" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">NOS SERVICES</a>
                 <a href="#" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">BLOG</a>
-                <a href="#" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">PROJECT</a>
+                
                 <a href="{% url 'contact' %}" class="block px-3 py-2 text-gray-800 hover:text-[#86E65A] font-medium">CONTACT</a>
             </div>
         </div>
     </div>
 </header>
+
+<!-- Hero Section -->
+<div class="relative bg-gradient-to-r from-gray-800 to-gray-600 text-white py-24">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="container mx-auto px-4 relative">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Notre <span class="text-[#86E65A]">Blog</span>
+        </h1>
+        <p class="text-xl">Découvrez nos derniers articles et actualités</p>
+    </div>
+</div>
+
+<!-- Blog Section -->
+<section class="py-16">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-8">
+            {% for article in articles %}
+            <article class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="{{ article.image.url }}" alt="{{ article.titre }}" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <div class="flex items-center text-sm text-gray-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>{{ article.date_publication|date:"d M Y" }}</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">{{ article.titre }}</h2>
+                    <p class="text-gray-600 mb-6">{{ article.contenu|truncatechars:200 }}</p>
+                    <h2 class="text-sm font-thin text-gray-900 mb-4">Publié par : {{ article.auteur }}</h2>
+                    <a href="#" class="inline-block bg-[#86E65A] text-gray-900 px-6 py-2 rounded-full font-medium hover:bg-[#6BC344] transition-colors">
+                        Lire la suite
+                    </a>
+                    
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 
     
 </body>

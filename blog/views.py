@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from .models import Article
 
-# Create your views here.
 def blog(request):
-    return render(request, 'blog/blog.html')
+    # Récupérer tous les articles en les ordonnant selon le champ défini dans le modèle
+    articles = Article.objects.all()
+    return render(request, 'blog/blog.html', {'articles': articles})
